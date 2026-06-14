@@ -4,11 +4,9 @@ namespace FlokiEvents.Core.Models;
 
 public class OrderEvent
 {
-    [JsonPropertyName("id")]
-    public int Id { get; set; }
     
     [JsonPropertyName("orderId")]
-    public int OrderId { get; set; }
+    public Guid OrderId { get; set; }
     
     [JsonPropertyName("orderItem")]
     public OrderItem OrderItem { get; set; }
