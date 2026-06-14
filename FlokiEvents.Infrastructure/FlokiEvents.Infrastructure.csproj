@@ -6,4 +6,15 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="AWSSDK.DynamoDBv2" Version="4.0.21.3" />
+      <PackageReference Include="AWSSDK.S3" Version="4.0.24.4" />
+      <PackageReference Include="AWSSDK.SimpleNotificationService" Version="4.0.3.4" />
+      <PackageReference Include="AWSSDK.SQS" Version="4.0.3.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\FlokiEvents.Core\FlokiEvents.Core.csproj" />
+    </ItemGroup>
+
 </Project>

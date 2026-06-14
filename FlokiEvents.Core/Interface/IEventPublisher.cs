@@ -1,3 +1,4 @@
+
 using FlokiEvents.Core.Models;
 
 namespace FlokiEvents.Core.Interface;

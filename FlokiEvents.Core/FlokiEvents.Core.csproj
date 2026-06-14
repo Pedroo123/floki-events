@@ -6,4 +6,10 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Reference Include="AWSSDK.SimpleNotificationService">
+        <HintPath>..\..\..\.nuget\packages\awssdk.simplenotificationservice\4.0.3.4\lib\net8.0\AWSSDK.SimpleNotificationService.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
 </Project>
