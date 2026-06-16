@@ -10,6 +10,9 @@
       <Reference Include="AWSSDK.SimpleNotificationService">
         <HintPath>..\..\..\.nuget\packages\awssdk.simplenotificationservice\4.0.3.4\lib\net8.0\AWSSDK.SimpleNotificationService.dll</HintPath>
       </Reference>
+      <Reference Include="AWSSDK.SQS">
+        <HintPath>..\..\..\.nuget\packages\awssdk.sqs\4.0.3.4\lib\net8.0\AWSSDK.SQS.dll</HintPath>
+      </Reference>
     </ItemGroup>
 
 </Project>
