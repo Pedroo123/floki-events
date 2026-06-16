@@ -11,7 +11,7 @@ public class SqsQueue : IEventQueue
 {
     private const string QueueName = "floki-events";
     
-    public  async Task<SendMessageResponse> SendMessageAsync(string queueUrl,
+    public async Task<SendMessageResponse> SendMessageAsync(string queueUrl,
         OrderEvent orderEvent)
     {
         var config = new AmazonSQSConfig()
@@ -33,6 +33,7 @@ public class SqsQueue : IEventQueue
         var response = await  client.SendMessageAsync(sendMessageRequest);
         return response;
     }
+    
     
     public async Task<CreateQueueResponse> CreateQueue()
     {
@@ -56,7 +57,26 @@ public class SqsQueue : IEventQueue
             }
         };
         
-        var response = await client.CreateQueueAsync(request);
+        var response = await client.CreateQueueAsync(request );
         return response;
+    }
+
+    public async Task<IEnumerable<OrderEvent>> ReceiveMessageAsync(string queueUrl, int maxMessages)
+    {
+        var config = new AmazonSQSConfig()
+        {
+            ServiceURL = "http://localhost:4566"
+        };
+        
+        var client = new AmazonSQSClient(config);
+
+        var messageResponse = await client.ReceiveMessageAsync(
+            new ReceiveMessageRequest()
+            {
+                QueueUrl = queueUrl,
+                MaxNumberOfMessages = maxMessages,
+                WaitTimeSeconds = 1,
+            });
+        return messageResponse.Messages.Select(x => JsonSerializer.Deserialize<OrderEvent>(x.Body));
     }
 }
