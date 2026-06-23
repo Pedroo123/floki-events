@@ -1,8 +1,7 @@
 # floki-events
 
 A simple experiment with FLOCI and event driven approach.
-
-Also, created thinking on Clean Arch, all made with .net 8.0
+All made with .net 8.0
 
 
 We have the following services configured:

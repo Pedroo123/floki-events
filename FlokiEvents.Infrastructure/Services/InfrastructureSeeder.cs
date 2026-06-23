@@ -84,7 +84,6 @@ public class InfrastructureSeeder
                 Name = _settings.TopicName
             });
 
-            // Update the settings with the actual ARN returned by Floci
             _settings.TopicArn = response.TopicArn;
             _logger.LogInformation("SNS topic created: {Arn}", response.TopicArn);
         }
@@ -134,7 +133,7 @@ public class InfrastructureSeeder
 
             _logger.LogInformation("DynamoDB table created: {Table}", _settings.DynamoTableName);
 
-            // Wait for table to become active
+            // timeout da tabela do dynamo para ficar ativa
             bool isActive = false;
             int retries = 0;
             while (!isActive && retries < 30)
