@@ -15,4 +15,4 @@ We have the following services configured:
 
 # Simple project just to test the floci structure, the diagram goes like this:
 
-![Imagem](./assets/fluxograma.png)
+![Imagem](./assets/fluxograma2.png)
