@@ -133,7 +133,7 @@ public class InfrastructureSeeder
 
             _logger.LogInformation("DynamoDB table created: {Table}", _settings.DynamoTableName);
 
-            // Wait for table to become active
+            // timeout da tabela do dynamo para ficar ativa
             bool isActive = false;
             int retries = 0;
             while (!isActive && retries < 30)
