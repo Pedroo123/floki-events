@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
@@ -11,6 +11,9 @@
       <PackageReference Include="AWSSDK.S3" Version="4.0.24.4" />
       <PackageReference Include="AWSSDK.SimpleNotificationService" Version="4.0.3.4" />
       <PackageReference Include="AWSSDK.SQS" Version="4.0.3.4" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.2" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.2" />
+      <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
     </ItemGroup>
 
     <ItemGroup>

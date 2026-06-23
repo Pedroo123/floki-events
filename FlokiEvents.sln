@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlokiEvents.Infrastructure"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlokiEvents.Consumer", "FlokiEvents.Consumer\FlokiEvents.Consumer.csproj", "{5B82071F-D6C9-4714-9C4C-B9C9702D3AFF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlokiEvents.Processor", "FlokiEvents.Processor\FlokiEvents.Processor.csproj", "{84560B0C-5CE6-4237-8B5C-3E489F6F717C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlokiEvents.Publisher", "FlokiEvents.Publisher\FlokiEvents.Publisher.csproj", "{16985C87-C7D2-4890-89DA-9146E6ABC81B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,13 @@ Global
 		{5B82071F-D6C9-4714-9C4C-B9C9702D3AFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B82071F-D6C9-4714-9C4C-B9C9702D3AFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B82071F-D6C9-4714-9C4C-B9C9702D3AFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84560B0C-5CE6-4237-8B5C-3E489F6F717C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84560B0C-5CE6-4237-8B5C-3E489F6F717C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84560B0C-5CE6-4237-8B5C-3E489F6F717C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84560B0C-5CE6-4237-8B5C-3E489F6F717C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16985C87-C7D2-4890-89DA-9146E6ABC81B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16985C87-C7D2-4890-89DA-9146E6ABC81B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16985C87-C7D2-4890-89DA-9146E6ABC81B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16985C87-C7D2-4890-89DA-9146E6ABC81B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,41 +1,32 @@
 using System.Text.Json;
-using System.Text.Json.Serialization;
 using Amazon.SimpleNotificationService;
 using Amazon.SimpleNotificationService.Model;
 using FlokiEvents.Core.Interface;
 using FlokiEvents.Core.Models;
+using Microsoft.Extensions.Options;
 
 namespace FlokiEvents.Infrastructure.Services;
 
 public class SnsPublisher : IEventPublisher
 {
+    private readonly IAmazonSimpleNotificationService _client;
+    private readonly string _topicArn;
+
+    public SnsPublisher(IAmazonSimpleNotificationService client, IOptions<AwsSettings> settings)
+    {
+        _client = client;
+        _topicArn = settings.Value.TopicArn;
+    }
+
     public async Task PublishAsync(OrderEvent message)
     {
-        var config = new AmazonSimpleNotificationServiceConfig
-        {
-            ServiceURL = "http://localhost:4566"
-        };
-        
-        var client = new AmazonSimpleNotificationServiceClient(config);
-        
         var request = new PublishRequest
         {
-            TopicArn = await CreateSNSTopicAsync(client),
-            Message = JsonSerializer.Serialize(message),
+            TopicArn = _topicArn,
+            Message = JsonSerializer.Serialize(message)
         };
-        
-        var response = await client.PublishAsync(request);
-        Console.WriteLine($"Message published: {response}");
-    }
-    
-    private static async Task<string> CreateSNSTopicAsync(IAmazonSimpleNotificationService client)
-    {
-        var request = new CreateTopicRequest
-        {
-            Name = "ExampleSNSTopicName"
-        };
-    
-        var response = await client.CreateTopicAsync(request);
-        return response.TopicArn;
+
+        var response = await _client.PublishAsync(request);
+        Console.WriteLine($"Message published: {response.MessageId}");
     }
 }

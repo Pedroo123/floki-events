@@ -4,8 +4,8 @@ namespace FlokiEvents.Core.Interface;
 
 public interface IOrderRepository
 {
-    public Task<OrderEvent> SaveAsync(OrderEvent orderEvent);
-    public Task GetByIdAsync(string id);
-    public Task UpdateStatusAsync(string id, OrderStatus status);
-    public Task CancelAsync(string id);
+    Task<OrderEvent> SaveAsync(OrderEvent orderEvent);
+    Task<OrderEvent?> GetByIdAsync(Guid id);
+    Task UpdateStatusAsync(Guid id, OrderStatus status);
+    Task CancelAsync(Guid id);
 }
